@@ -1,8 +1,8 @@
 //
 //  iOS_TMDB_AppApp.swift
-//  iOS-TMDB-App
+//  iOS-TMDB-APP
 //
-//  Created by Boba Fett on 7/10/25.
+//  Created by Kyle Peters on 5/27/25.
 //
 
 import SwiftUI
@@ -11,7 +11,7 @@ import SwiftUI
 struct iOS_TMDB_AppApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView().preferredColorScheme(.dark)
         }
     }
 }

@@ -1,24 +1,36 @@
 //
 //  ContentView.swift
-//  iOS-TMDB-App
+//  iOS-TMDB-APP
 //
-//  Created by Boba Fett on 7/10/25.
+//  Created by Kyle Peters on 5/27/25.
 //
 
 import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
-        }
-        .padding()
+        TabView {
+            NavigationStack {
+                MoviesView()
+            }
+            .tabItem {
+                Image(systemName: "tv")
+                Text("Movies")
+            }
+            NavigationStack {
+                LikedMoviesListView()
+            }
+            .tabItem {
+                Image(systemName: "heart")
+                Text("Favorites")
+            }
+            NavigationStack {
+                SettingView()
+            }
+            .tabItem {
+                Image(systemName: "gear")
+                Text("Settings")
+            }
+        }.onAppear(perform: {decodeShow()})
     }
-}
-
-#Preview {
-    ContentView()
 }
